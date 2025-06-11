@@ -3,6 +3,8 @@
         Pievienot filmu/seriālu
     </x-slot:title>
     
+    <h1>Pievienot filmu/seriālu</h1>
+
     <form method="POST" action="/entries">
         @csrf
 
@@ -29,15 +31,15 @@
 
         <label>
             Žanrs<br>
-                <label><input type="checkbox" name="genre[]" value="action"> Action</label>
-                <label><input type="checkbox" name="genre[]" value="comedy"> Comedy</label>
-                <label><input type="checkbox" name="genre[]" value="drama"> Drama</label>
-                <label><input type="checkbox" name="genre[]" value="thriller"> Thriller</label>
-                <label><input type="checkbox" name="genre[]" value="sci-fi"> Sci-Fi</label>
-                <label><input type="checkbox" name="genre[]" value="horror"> Horror</label>
-                <label><input type="checkbox" name="genre[]" value="animation"> Animation</label>
-                <label><input type="checkbox" name="genre[]" value="romance"> Romance</label>
-                <label><input type="checkbox" name="genre[]" value="fantasy"> Fantasy</label>
+                <label><input type="checkbox" name="genre[]" value="Action"> Action</label>
+                <label><input type="checkbox" name="genre[]" value="Comedy"> Comedy</label>
+                <label><input type="checkbox" name="genre[]" value="Drama"> Drama</label>
+                <label><input type="checkbox" name="genre[]" value="Thriller"> Thriller</label>
+                <label><input type="checkbox" name="genre[]" value="Sci-fi"> Sci-Fi</label>
+                <label><input type="checkbox" name="genre[]" value="Horror"> Horror</label>
+                <label><input type="checkbox" name="genre[]" value="Animation"> Animation</label>
+                <label><input type="checkbox" name="genre[]" value="Romance"> Romance</label>
+                <label><input type="checkbox" name="genre[]" value="Fantasy"> Fantasy</label>
         </label><br>
 
         @error("genre")
@@ -56,10 +58,10 @@
         <label>
             Statuss
             <select name="status">
-                <option value="watching">Watching</option>
-                <option value="watched">Watched</option>
-                <option value="plan_to_watch">Plan to watch</option>
-                <option value="dropped">Dropped</option>
+                <option value="Watching">Watching</option>
+                <option value="Watched">Watched</option>
+                <option value="Plan to watch">Plan to watch</option>
+                <option value="Dropped">Dropped</option>
             </select>
         </label><br>
 
@@ -69,7 +71,7 @@
 
         <label>
             Vērtējums (0-10)
-            <input name="rating" type="number"></input>
+            <input name="rating" type="number" step="0.01" min="0" max="10">
         </label>
 
         @error("rating")

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->enum('type', ['movie', 'tv_show']);
             $table->json('genre')->nullable();
             $table->integer('year')->nullable();
-            $table->enum('status', ['watching', 'watched', 'plan_to_watch', 'dropped']);
-            $table->integer('rating')->nullable();
+            $table->enum('status', ['Watching', 'Watched', 'Plan to watch', 'Dropped']);
+            $table->decimal('rating', 4, 2)->nullable();
             $table->timestamps();
         });
     }

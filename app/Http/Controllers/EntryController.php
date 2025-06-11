@@ -27,8 +27,8 @@ class EntryController extends Controller
             "genre" => ["nullable", "array"],
             "genre.*" => ["string", "max:255"],
             "year" => ["nullable", "integer", "min:1800", "max:" . (date('Y') + 1)],
-            "status" => ["required", "in:watching,watched,plan_to_watch,dropped"],
-            "rating" => ["nullable", "integer", "min:0", "max:10"]
+            "status" => ["required", "in:Watching,Watched,Plan to watch,Dropped"],
+            "rating" => ["nullable", "numeric", "between:0,10", "regex:/^\d{1,2}(\.\d{1,2})?$/"]
         ]);
         Entry::create([
             "title" => $validated["title"],
@@ -52,8 +52,8 @@ class EntryController extends Controller
             "genre" => ["nullable", "array"],
             "genre.*" => ["string", "max:255"],
             "year" => ["nullable", "integer", "min:1800", "max:" . (date('Y') + 1)],
-            "status" => ["required", "in:watching,watched,plan_to_watch,dropped"],
-            "rating" => ["nullable", "integer", "min:0", "max:10"]
+            "status" => ["required", "in:Watching,Watched,Plan to watch,Dropped"],
+            "rating" => ["nullable", "numeric", "between:0,10", "regex:/^\d{1,2}(\.\d{1,2})?$/"]
         ]);
 
         $entry->title = $validated["title"];
